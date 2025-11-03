@@ -79,7 +79,12 @@
 
 # Introduction
 
-> Votre introduction avec notamment les objectifs opérationnels du module.
+> Dans ce module, nous allons apprendre comment programmer de manière fonctionnelle avec les différents opérateurs, les différentes chaînes de caractères, etc...  
+Voici les objectifs du module :
+> - Analyser et décrire les exigences en vue de la réalisation d'une programmation fonctionnelle.
+> - Implémenter de manière efficiente des algorithmes et des problèmes d'applications selon le paradigne de programmmation fonctionnelle et les exigences données.
+> - Améliorer et optimiser le code impératif implémenté en utilisant la programmation fonctionnelle (refactorisation).
+> - Vérifier l'exactitude et la qualité de l'implémentation. 
 
 # Opérateurs javascript super-cooool 😎
 
