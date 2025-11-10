@@ -210,101 +210,99 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `Math.PI` - la constante π
 
-Description à faire par vos soins...
+Math.PI est une constante qui représente la valeur de π (≈ 3.14159) et sert pour les calculs en lien avec les cercles ou les ang
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const aireCercle = (rayon) => {
+  return Math.round((Math.PI * rayon * rayon) * 100) / 100;  
+};
 ```
 
 ## `Math.abs()` - la \|valeur absolue\| d'un nombre
 
-Description à faire par vos soins...
+Math.abs() retourne la valeur absolue d’un nombre, c’est-à-dire le nombre sans son signe (transforme un négatif en positif).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.abs(-7)); 
 ```
 
 ## `Math.pow()` - élever à une puissance
 
-Description à faire par vos soins...
+Math.pow() permet de calculer une puissance, en élevant un nombre à la puissance d'une autre. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.pow(2, 3));
 ```
 
 ## `Math.min()` - plus petite valeur
 
-Description à faire par vos soins...
+Math.min() a comme but de renvoyer le plus petit nombre d'une liste de valeurs donnnées. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.min(4, 9, -2, 7));
 ```
 
 ## `Math.max()` - plus grande valeur
 
-Description à faire par vos soins...
+Math.max() a comme but de renvoyer la plus grande valeur d'une liste de valeurs de données. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.max(4, 9, -2, 7));
 ```
 
 ## `Math.ceil()` - arrondir à la prochaine valeur entière la plus proche
 
-Description à faire par vos soins...
+Math.ceil() permet d'arrondir un nombre à l'entier supérieur, même si la décimale est faible :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.ceil(4.1));
 ```
 
 ## `Math.floor()` - arrondir à la précédente valeur entière la plus proche
 
-Description à faire par vos soins...
+Math.floor() permet d'arrondir un nombre à l'entier inférieur, en supprimant la partie décimale :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.floor(4.9));
 ```
 
 ## `Math.round()` - arrondir à la valeur entière la plus proche
 
-Description à faire par vos soins...
+Méthode utilisée pour arrondir des nombres, dans l'exemple ci-dessous nous avons arrondi au demi-point :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+    const note = (pointsMax) => (points) => {
+      return  Math.round(((points / pointsMax) * 5 + 1)* 2 ) /2;
+    };
 ```
 
 ## `Math.trunc()` - supprime la virgule et retourne la partie entière d'un nombre
 
-Description à faire par vos soins...
+Math.trunc() permet de supprimer la partie décimale d'un nombre et renvoie uniquement sa partie entière, sans arrondir :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.trunc(4.9));  
+console.log(Math.trunc(-3.7));
 ```
 
 ## `Math.sqrt()` - la raçine carrée d'un nombre
 
-Description à faire par vos soins...
+Math.sqrt() renvoie la racine carrée d'un nombre :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.log(Math.sqrt(25));
 ```
 
 ## `Math.random()` - générer un nombre aléatoire entre 0.0 (compris) et 1.0 (non compris)
 
-Description à faire par vos soins...
+Math.random est une méthode qui renvoie une valeur entre 0 et 0.99999999999 et ensuite vous la multipliez pour avoir quelque chose entre un min et un max
+Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+public static void main(String[] args) {
+  int nombre = (int) (Math.random() * (max - min + 1)) + min;        
+  System.out.println("b");
+};
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -317,20 +315,22 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `JSON.stringify()` - transformer un objet Javascript en JSON
 
-Description à faire par vos soins...
+JSON.stringify() sert à convertir un objet JavaScript en chaîne de texte JSON. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const user = { name: "Emma", age: 20};
+const jsonText = JSON.stringify(user);
+console.log(jsonText);
 ```
 
 ## `JSON.parse()` - transformer du JSON en objet Javascript
 
-Description à faire par vos soins...
+JSON.parse() sert à convertir une chaîne JSON en objet JavaScript, c'est l'inverse de JSON.stringify. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const jsonText = '{"name: "Emma", "age": 20}';
+const user = JSON.parse(jsonText);
+console.log(user.name);
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -343,29 +343,34 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `split()` - un ciseau qui coupe une chaîne là où un caractère apparaît et produit un tableau
 
-Description à faire par vos soins...
+split() sert à couper une chaîne de caractères en un tableau, selon un séparateur choisi. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const phrase = "salut, au revoir, bonjour";
+const separer = phrase.split(",");
+console.log(separer);
 ```
 
 ## `trim()`, `trimStart()` et `trimEnd()` - épuration des espaces en trop dans une chaîne (trimming)
 
-Description à faire par vos soins...
+trim(), trimStart(), trimEnd() servent à supprimer les espaces inutiles dans une chaîne de caractères. Voici l'exemple ci-dessous :
+
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const text = "   Salut ça va?   ";
+console.log(text.trim()); // enlève les espaces au début et à la fin
+console.log(text.trimStart()); // enlève seulement au début
+console.log(text.trimEnd()) // enlève seulement à la fin
 ```
 
 ## `padStart()` et `padEnd()` - aligner le contenu dans une chaîne de caractères
 
-Description à faire par vos soins...
+padStart() et padEnd() servent à compléter une chaîne avec des caractères (souvent des zéros ou espaces) jusqu'à une longueur donnée. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const num = "7";
+console.log(num.padStart(3, "0")); // ajoute des 0 au début (007)
+console.log(num.padEnd(4, ".")) // ajoute des points à la fin (7...)
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
