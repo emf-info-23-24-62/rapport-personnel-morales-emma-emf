@@ -389,29 +389,37 @@ console.log('Coucou !'); // Coucou !
 
 ## `console.info()`, `warn()` et `error()` - Afficher un message sur la console (filtrables)
 
-Description à faire par vos soins...
+console.info(), console.warn(), console.error() servent à afficher des messages dans la console avec des niveaux d'importance différentes. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.info("Info : chargement terminé.") // informatif, en bleu
+console.warn("Attention : données incomplètes.") // avertissement, en jaune
+console.error(" Erreur : échec de la requête !") // erreur, en rouge
 ```
 
 ## `console.table()` - Afficher tout un tableau ou un objet sur la console
 
-Description à faire par vos soins...
+console.table() affiche les données sous forme de tableau dans la console, ce qui rend la lecture plus claire. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const users = [
+  {name: "Emma", age: 20},
+  {name: "Julie", age: 17}
+];
+console.table(users);
 ```
 
 ## `console.time()`, `timeLog()` et `timeEnd()` - Chronométrer une durée d'exécution
 
-Description à faire par vos soins...
+Les méthodes console.time(), console.timeLog() et consoletimeEnd() servent à mesurer le temps d'exécution d'un morceau de code. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+console.time("test"); // démarre le chronométre
+
+for(let i = 0; i < 1e6; i++) {} // code à mésurer
+
+console.timeLog("test") // affiche le temps écoulé jusqu'ici
+console.timeEnd("test") // affiche le temps total et stop le chrono
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -424,110 +432,129 @@ Lien vers la documentation officielle : [https://developer.mozilla.org/fr/docs/W
 
 ## `forEach` - parcourir les éléments d'un tableau
 
-Description à faire par vos soins...
+forEach() permet d'exécuter une fonction pour chaque élément d'un tableau, sans renvoyer de nouveau tableau. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie", "cem"];
+
+eleves.forEach(eleve => {
+  console.log(eleve);
+});
 ```
 
 ## `entries()` - parcourir les couples index/valeurs d'un tableau
 
-Description à faire par vos soins...
+entries() renvoie un itérateur contenant les paires [index, valeur] d'un tableau ou les paires [clé, valeur] d'un objet Map. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie", "cem"];
+
+for(const [index, eleve] of eleves.entries()) {
+  console.log(index, eleve);
+}
 ```
 
 ## `in` - parcourir les clés d'un tableau
 
-Description à faire par vos soins...
+in sert à vérifier si une propriété existe dasn un objet ou un index dans un tableau. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const user = {name: "Emma", age: 20};
+
+console.log("name" in user); // true
+console.log("email" in user); //false
 ```
 
 ## `of` - parcourir les valeurs d'un tableau
 
-Description à faire par vos soins...
+of est utilisé dans un boucle for...of pour parcourir directement les  valeurs d'un tableau, d'une chaîne ou d'un autre objet itérable. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "cem", "julie"];
+
+for(const eleve of eleves) {
+  console.log(eleve);
+}
 ```
 
 ## `find()` - premier élément qui satisfait une condition
 
-Description à faire par vos soins...
+find() permet de retourner le premier élément d'un tableau qui satisfait une condition donnée (fonction de test).
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const numbers = [5, 12, 8, 130, 44];
+const found = numbers.find(num => num > 10);
+console.log(found) // il va donc retourner le premier nombre supérieur à 10
 ```
 
 ## `findIndex()` - premier index qui satisfait une condition
 
-Description à faire par vos soins...
-
+findIndex() renvoie l'index du premier élément d'un tableau qui satisfait une condition donnée. Voici l'exemple ci-dessous :
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const numbers = [5, 12, 8, 130, 44];
+const index = numbers.findIndex(num => num > 10);
+console.log(index); 
 ```
 
 ## `indexOf()` et `lastIndexOf()` - premier/dernier élément qui correspond
 
-Description à faire par vos soins...
+indexOf() et lastIndexOf() servent à trouver la position (index) d'un élément dans un tableau ou une chaîne. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["julie", "emma", "cem"];
+
+console.log(eleves.indexOf("emma")); // résultat : 1
+console.log(eleves.lastIndexOf("cem")); // résultat : 2
 ```
 
 ## `push()`, `pop()`, `shift()` et `unshift()` - ajouter/supprime au début/fin dans un tableau
 
-Description à faire par vos soins...
+push(), pop(), shift() et unshift() servent à ajouter ou rétirer des éléments d'un tableau. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie"];
+
+eleves.push("cem") // le tableau devient ["emma", "julie", "cem"]
+eleves.pop(); // rétire le dernier donc ça revient comme avant
+eleves.shift(); // rétire le premier donc il reste que ["julie"]
+eleves.unshift("emma") // ajoute au début donc ça devient ["emma", "julie"]
 ```
 
 ## `slice()` - ne conserver que certaines lignes d'un tableau
 
-Description à faire par vos soins...
+slice() sert à copier une partie d'un tableau ou d'une chaîne sans le modifier. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie", "cem", "noé", "diogo"];
+const partie = eleves.slice(1,3); // le résultat sera julie et noé
 ```
 
 ## `splice()` - supprimer/insérer/remplacer des valeurs dans un tableau
 
-Description à faire par vos soins...
+splice() sert à modifier un tableau directement : on peut supprimer, ajouter ou remplacer des éléments. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["cem", "julie", "emma"];
+eleves.splice(1,1); // ça supprime 1 élément à partir de l'index 1 donc le résultat est ["cem", "emma"] 
 ```
 
 ## `concat()` - joindre deux tableaux
 
-Description à faire par vos soins...
+concat() sert à fusionner plusieurs tableaux ou chaines en un nouveau tableau, sans modifier les originaux. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const vraisEleves = ["emma", "julie", "cem"];
+const fauxEleves = ["marion", "jeremy"];
+const eleves = vraisEleves.concat(fauxEleves); // ["emma", "julie", "cem", "marion", "jeremy"]
 ```
 
 ## `join()` - joindre des chaînes de caractères
 
-Description à faire par vos soins...
+join() sert à transformer un tableau en chaîne de caractères, en mettant un séparateur entre les éléments. Voici un exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "cem", "julie"];
+console.log(fruits.join(" - ")); //emma - cem - julie 
 ```
 
 ## `keys()` et `values()` - les clés/valeurs d'un objet
