@@ -559,110 +559,173 @@ console.log(fruits.join(" - ")); //emma - cem - julie
 
 ## `keys()` et `values()` - les clés/valeurs d'un objet
 
-Description à faire par vos soins...
+keys() et values() servent a récupérer les clés (index) ou les valeurs d'un tableeau ou d'un objet Map. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["cem", "emma", "julie"];
+
+for (const index of eleves.keys()) {
+  console.log(index); // le résultat sera 0, 1, 2
+
+for (const valeur of eleves.values()) {
+  console.log(valeur); // le résultat sera "cem", "emma", "julie"
+  }
+}
 ```
 
 ## `includes()` - vérifier si une valeur est présente dans un tableau
 
-Description à faire par vos soins...
+includes() sert à vérifier si un tableau ou une chaîne contient une valeur donnée, et renvoie true ou false.
 
 ```javascript
 A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie", "cem"];
+
+console.log(eleves.includes("emma")); // true
+console.log(eleves.includes("diogo")); // false
 ```
 
 ## `every()` et `some()` - vérifier si plusieurs valeurs sont toutes/quelques présentes dans un tableau
 
-Description à faire par vos soins...
+every() et some() servent à tester des conditions sur les éléments d'un tableau.
+every() renvoie true si tous les éléments respectent la condition. 
+some() renvoie true si au moins un élément respecte la condition.
+Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [2, 4, 6, 8];
+
+console.log(nombres.every(n => n % 2 === 0)); // true car tous sont pairs
+console.log(nombres.some(n => n > 6)); // true car il y a au moins un > 6
 ```
 
 ## `fill()` - remplir un tableau avec des valeurs
 
-Description à faire par vos soins...
+fill() sert à remplir un tableau avec une même  valeur, sur tout ou une partie de celui-ci.   La syntaxe est "array.fill(valeur, début, fin) donc il remplit de début (inclus) à fin (exclu). Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3, 4, 5];
+nombres.fill(0); // le résultat est [0, 0, 0, 0, 0]
+
+const autres = [1, 2, 3, 4, 5];
+autres.fill(9,1,4);  // le résultat est [1, 9, 9, 9, 5]
 ```
 
 ## `flat()` - aplatir un tableau
 
-Description à faire par vos soins...
+flat() sert à aplatir un tableau de tableaux en retirant les niveaux imbriqués. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const arr = [1, [2, 3], [4, [5, 6]]];
+console.log(arr.flat()); // [1, 2, 3, 4, [5, 6]] il est aplati d'un niveau
+console.log(arr.flat(2)); // [1, 2, 3, 4, 5, 6] il est aplati de deux niveaux
 ```
 
 ## `sort()` - pour trier un tableau
 
-Description à faire par vos soins...
+sort() sert à trier les éléments d'un tableau, par ordre alphabétique par défaut, ou selon une fonction de comparaison. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const eleves = ["emma", "julie", "cem"];
+eleves.sort(); // ["cem", "emma", "julie"]
+
+// pour un tri numérique 
+const nombres = [10, 2, 30],
+nombres.sort((a, b) => a - b); // [2, 10, 30]
 ```
 
 ## `map()` - tableau avec les résultats d'une fonction
 
-Description à faire par vos soins...
+map() sert à créer un nouveau tableau en transformant chaque élément selon une fonction donnée. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const resultat = dataVilles.map(ville => ({ Ville: ville.ville, Canton: ville.canton }));
+/* le résultat est :
+ {
+      "Ville": "Fribourg",
+      "Canton": "FR"
+   }, */
+
+
 ```
 
 ## `filter()` - tableau avec les éléments passant un test
 
-Description à faire par vos soins...
+filter() sert à créer un nouveau tableau contenant uniquement les éléments qui respectent une condition, il ne modifie pas le tableau original. Il renvoie un nouveau tableau avec les éléments correspondants. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const resultat = dataEvaluations.filter(evalu => evalu.branche === 'Maths' && evalu.note == '6.0'); 
+/* le résultat est : 
+  {
+      "date": "02.12.2024",
+      "nom": "NISSENS",
+      "prenom": "Remy",
+      "branche": "Maths",
+      "note": 6
+   }, */
 ```
 
 ## `groupBy()` - regroupe les éléments d'un tableau selon un règle
 
-Description à faire par vos soins...
+groupBy() sert à regrouper les éléments d'un tableau selon  une clé ou une condition, et renvoie un objet dont chaque propriété représente un groupe. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const users = [
+  {name: "Emma", age: 10},
+  {name: "Julie", age: 17},
+  {name: "Cem", age: 25},
+  {name: "Diogo", age: 17}
+];
+
+const  group = Object.groupBy(users, user => user.age);
+/* le réultat sera :
+  18: [{ name: "Cem", age: 25 }],
+  22: [{ name: "Julie", age: 17 }, { name: "Diogo", age: 17 }],
+  16: [{ name: "Emma", age: 10 }] */
 ```
 
 ## `flatMap()` - chaînage de map() et flat()
 
-Description à faire par vos soins...
+flatMap() combine map() et flat(). Il transforme chaque élément d'un tableau, puis aplatit le résultat. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const commandes = [
+  { id: 1, produits: ["tasse", "assiette"] },
+  { id: 2, produits: ["vase"] },
+  { id: 3, produits: ["bol", "plat"] }
+];
+
+// il extrait  tous les produits dans un seul tableau
+const produits = commandes.flatMap(c => c.produits); // le résultat est  ["tasse", "assiette", "vase", "bol", "plat"]
+
 ```
 
 ## `reduce()` et `reduceRight()` - réduire un tableau à une seule valeur
 
-Description à faire par vos soins...
+reduce() et reduceRight() servent à accumuler (réduire) les valeurs d'un tableau en une seule valeur finale, en appliquant une fonction à chaque élément. La différence est que reduceRight() parcourt le tableau de droite à gauche. 
+Le reduce() est utilisé pour les sommes, totaux, regroupements. En revanche le reduceRight() est utilisé pour les concaténations inversées ou les calculs rétroactifs. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+// reduce() 
+const panier = [
+  { produit: "tasse", prix: 12},
+  { produit: "vase", prix: 30},
+  { produit: "assiette", prix: 18}
+];
+
+const total = panier.reduce((acc, produitPanier) => acc + produitPanier.prix, 0); // le résultat est 60
+
+// reduceRight()
+const lettres = ["a", "b", "c"];
+const mot = lettres.reduceRight((acc, 1) => acc + 1); // le résultat est "cba"
 ```
 
 ## `reverse()` - inverser l'ordre du tableau
-
-Description à faire par vos soins...
+reverse() sert à inverser l'ordre des éléments d'un tableau directement (en le modifiant), il change le tableau original. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 3, 4];
+nombres.reverse(); // le résultat est [4, 3, 2, 1]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -673,20 +736,30 @@ SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
 
 ## ``(backticks) - pour des expressions intelligentes
 
-Description à faire par vos soins...
+Les backticks (accent grave ``) servent à créer des chaînes de caractères dynamiques en JavaScript. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const name = "Emma";
+const age = 18;
+
+console.log(`Bonjour, je m'appelle ${name} et j'ai ${age} ans.`);
+// Bonjour, je m'appelle Emma et j'ai 20 ans.
+
+const texte = `Ligne 1
+Ligne 2
+Ligne 3`;
+console.log(texte);
+console.log(`Dans 5 ans, j'aurai ${age + 5} ans.`);
+// Dans 5 ans, j'aurai 23 ans.
 ```
 
 ## `new Set()` - pour supprimer les doublons
 
-Description à faire par vos soins...
+new Set() crée un ensemble (Set), càd une collection de valeurs uniques donc aucun doublon n'est autorisé. Voici l'exemple ci-dessous :
 
 ```javascript
-A FAIRE PAR VOS SOINS...
-SIMPLE, DROIT AU BUT, UTILE, STYLE PENSE-BÊTE
+const nombres = [1, 2, 2, 3, 4, 4];
+const uniques = [...new Set(nombres)]; // le résulat est [1, 2, 3, 4]
 ```
 
 <svg height="12" width="100%" style="padding-top:2em;padding-bottom:1em">
@@ -746,5 +819,9 @@ ou
 ```
 
 # Conclusion
-
-> Votre conclusion avec les éléments usuels
+## Ce que j'ai appris
+Je trouve que durant ce module, nous avons appris beaucoup de chose même si parfois c'était pas très facie. Maintenant je sais comment développer de manière fonctionnelle.
+## Mes points forts
+Je trouve que j'ai assez bien compris l'utilisation des filter(), map(), les pipes ou les builder pattern. J'ai bien réussi à les implémenter durant les exercices.
+ ## Mes points faibles
+Mon principal point faible durant ce module était la méthode reduce(). J’ai vraiment eu de la peine à la comprendre, surtout qu’elle devenait de plus en plus complexe. Cependant, au fil du temps, j’ai commencé à mieux la comprendre, même si j’ai encore un peu de difficulté.
